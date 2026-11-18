@@ -1,0 +1,28 @@
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.ExpenseTracker"
+        parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/primary_button</item>
+        <item name="colorOnPrimary">@color/button_text</item>
+
+        <!-- Background -->
+        <item name="android:windowBackground">@color/main_background</item>
+        <item name="colorSurface">@color/card_background</item>
+        <item name="colorOnSurface">@color/primary_text</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/main_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Navigation Bar -->
+        <item name="android:navigationBarColor">@color/main_background</item>
+
+    </style>
+
+    <style name="Theme.ExpenseTracker"
+        parent="Base.Theme.ExpenseTracker" />
+
+</resources>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".SignUp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:gravity="center"
+        android:paddingVertical="32dp">
+
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_logo_badge"
+            android:importantForAccessibility="no">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_wallet"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:letterSpacing="-0.02"
+            android:text="Create account"
+            android:textColor="@color/primary_text"
+            android:textSize="32sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Start managing your money today."
+            android:textColor="@color/secondary_text"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_input"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="12dp"
+            android:hint="Your full name"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/hint_text"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_input"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="12dp"
+            android:hint="you@example.com"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/hint_text"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/edtPhone"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_input"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawablePadding="12dp"
+            android:hint="10-digit mobile number"
+            android:maxLength="10"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/hint_text"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_input"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="12dp"
+            android:hint="Create a password"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/hint_text"
+            android:textSize="15sp"/>
+
+        <EditText
+            android:id="@+id/edtConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_input"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="12dp"
+            android:hint="Re-enter your password"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/hint_text"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/btnSignup"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_primary_button"
+            android:backgroundTint="@null"
+            android:stateListAnimator="@null"
+            android:text="Create account"
+            android:textAllCaps="false"
+            android:textColor="@color/button_text"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account?"
+                android:textColor="@color/secondary_text"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/txtGoLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:minHeight="48dp"
+                android:paddingStart="6dp"
+                android:text="Log in"
+                android:textColor="@color/selected_icon"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

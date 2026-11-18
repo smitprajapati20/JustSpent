@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Background Colors -->
+    <color name="main_background">#121A17</color>
+    <color name="card_background">#1D2923</color>
+    <color name="secondary_surface">#25332B</color>
+    <color name="gradient_start">#2BC08C</color>
+    <color name="gradient_end">#16875F</color>
+    <color name="glow_start">#4020A879</color>
+    <color name="glow_end">#0020A879</color>
+
+    <!-- Button Colors -->
+    <color name="primary_button">#20A879</color>
+    <color name="secondary_button">#263D32</color>
+    <color name="outlined_button">#55C995</color>
+    <color name="button_text">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="primary_text">#F1F5F2</color>
+    <color name="subtitle_text">#C5D0C8</color>
+    <color name="body_text">#B5C1BA</color>
+    <color name="secondary_text">#A6B5AC</color>
+    <color name="tertiary_text">#7F8E85</color>
+    <color name="hint_text">#84928A</color>
+    <color name="disabled_text">#64736A</color>
+
+    <!-- EditText Colors -->
+    <color name="edittext_background">#1D2923</color>
+    <color name="edittext_border">#35443B</color>
+    <color name="focus_border">#55C995</color>
+
+    <!-- Icon Colors -->
+    <color name="icon_color">#C5D0C8</color>
+    <color name="selected_icon">#55C995</color>
+    <color name="disabled_icon">#64736A</color>
+
+    <!-- Divider -->
+    <color name="divider">#2B3830</color>
+
+    <!-- Income / Expense / Status -->
+    <color name="income_color">#55C995</color>
+    <color name="expense_color">#FF7777</color>
+    <color name="savings_color">#55C995</color>
+    <color name="warning_color">#F2BE62</color>
+    <color name="error_color">#FF7777</color>
+    <color name="info_color">#75B6F0</color>
+
+    <!-- Chart Colors -->
+    <color name="chart_income">#55C995</color>
+    <color name="chart_expense">#FF7777</color>
+    <color name="chart_food">#E8B968</color>
+    <color name="chart_transport">#75B6F0</color>
+    <color name="chart_shopping">#B49AE8</color>
+    <color name="chart_bills">#68C8CE</color>
+    <color name="chart_entertainment">#E59AB8</color>
+    <color name="chart_other">#A6B5AC</color>
+
+    <!-- Chart Styling -->
+    <color name="chart_grid">#34443B</color>
+    <color name="chart_axis">#A6B5AC</color>
+
+    <color name="ripple_color_soft">#2655C995</color>
+    <color name="card_stroke">#2B3830</color>
+
+</resources>

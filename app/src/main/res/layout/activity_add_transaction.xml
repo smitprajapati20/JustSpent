@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".AddTransaction">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="24dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background = "@drawable/bg_logo_badge"
+                android:src="@drawable/ic_wallet"
+                android:padding="@dimen/_5sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Add transaction"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="sans-serif-medium"
+            android:labelFor="@id/edtAmount"
+            android:text="Amount"
+            android:textColor="@color/subtitle_text"
+            android:textSize="13sp"/>
+
+        <EditText
+            android:id="@+id/edtAmount"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_input"
+            android:hint="0.00"
+            android:inputType="numberDecimal"
+            android:maxLength="12"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/hint_text"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Transaction type"
+            android:textColor="@color/subtitle_text"
+            android:textSize="13sp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp">
+
+            <Spinner
+                android:id="@+id/spnType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_spinner"
+                android:dropDownVerticalOffset="60dp"
+                android:paddingStart="48dp"
+                android:paddingEnd="40dp"
+                android:popupBackground="@drawable/bg_spinner_popup"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_swap" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:labelFor="@id/edtTitle"
+            android:text="Title"
+            android:textColor="@color/subtitle_text"
+            android:textSize="13sp"/>
+
+        <EditText
+            android:id="@+id/edtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_input"
+            android:drawableStart="@drawable/ic_title"
+            android:drawablePadding="12dp"
+            android:hint="e.g. Groceries, Salary"
+            android:imeOptions="actionNext"
+            android:inputType="textCapSentences"
+            android:maxLines="1"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/hint_text"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Category"
+            android:textColor="@color/subtitle_text"
+            android:textSize="13sp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp">
+
+            <Spinner
+                android:id="@+id/spnCategory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_spinner"
+                android:dropDownVerticalOffset="60dp"
+                android:paddingStart="48dp"
+                android:paddingEnd="40dp"
+                android:popupBackground="@drawable/bg_spinner_popup"/>
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_category"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Payment method"
+            android:textColor="@color/subtitle_text"
+            android:textSize="13sp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp">
+
+            <Spinner
+                android:id="@+id/spnPayment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_spinner"
+                android:dropDownVerticalOffset="60dp"
+                android:paddingStart="48dp"
+                android:paddingEnd="40dp"
+                android:popupBackground="@drawable/bg_spinner_popup"/>
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_payment"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Date"
+            android:textColor="@color/subtitle_text"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_input"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_calander"
+            android:drawablePadding="12dp"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:hint="Select date"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/hint_text"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_primary_button"
+            android:backgroundTint="@null"
+            android:stateListAnimator="@null"
+            android:text="Save transaction"
+            android:textAllCaps="false"
+            android:textColor="@color/button_text"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>
