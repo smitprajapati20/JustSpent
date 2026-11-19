@@ -4,9 +4,11 @@ import static android.widget.Toast.LENGTH_LONG;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +24,8 @@ import com.google.android.material.snackbar.Snackbar;
 public class Profile extends AppCompatActivity {
 
     LinearLayout changePass, editProfile;
-    TextView Initial, Name, Email;
+    ImageView back;
+    TextView Initial, Name, Email, Income,Expense, Net;
     SharedPreferences sp;
     Button logout;
     SQLiteDatabase db;
@@ -44,6 +47,16 @@ public class Profile extends AppCompatActivity {
         Name = findViewById(R.id.txtName);
         logout = findViewById(R.id.btnLogout);
         Email = findViewById(R.id.txtEmail);
+        Income = findViewById(R.id.txtIncome);
+        Expense = findViewById(R.id.txtExpense);
+        Net = findViewById(R.id.txtSavings);
+        back = findViewById(R.id.btnMenu);
+
+        back.setOnClickListener(v->{
+            startActivity(new Intent(Profile.this,Dashboard.class));
+            finish();
+        });
+        getTotalIncomeExpense();
 
         Name.setText(sp.getString(ConstantSP.name,""));
         Email.setText(sp.getString(ConstantSP.email,""));
@@ -69,6 +82,44 @@ public class Profile extends AppCompatActivity {
                         finish();
                     }).show();
         });
+
+        editProfile.setOnClickListener(v->{
+            startActivity(new Intent(Profile.this,EditProfile.class));
+        });
+
+    }
+    private void getTotalIncomeExpense(){
+
+        int userId = sp.getInt(ConstantSP.userid, 0);
+        double incomeAmount = 0;
+        double expenseAmount = 0;
+
+
+        Cursor incomeCursor = db.rawQuery(
+                "SELECT SUM(amount) FROM transaction_table WHERE userid = ? AND transaction_type = ?",
+                new String[]{String.valueOf(userId), "Income"}
+        );
+
+        if(incomeCursor.moveToFirst()) {
+            incomeAmount = incomeCursor.getDouble(0);
+        }
+        incomeCursor.close();
+
+        Cursor expenseCursor = db.rawQuery(
+                "SELECT SUM(amount) FROM transaction_table WHERE userid = ? AND transaction_type = ?",
+                new String[]{String.valueOf(userId), "Expense"}
+        );
+
+        if(expenseCursor.moveToFirst()){
+            expenseAmount = expenseCursor.getDouble(0);
+        }
+        expenseCursor.close();
+
+        double net = incomeAmount - expenseAmount ;
+
+        Income.setText("₹ " + incomeAmount);
+        Expense.setText("₹ " + expenseAmount);
+        Net.setText("₹ " + net);
 
     }
 }

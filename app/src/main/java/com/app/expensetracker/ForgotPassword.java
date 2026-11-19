@@ -82,6 +82,7 @@ public class ForgotPassword extends AppCompatActivity {
                 if (cursor.getCount() > 0){
                     String updatePassword = "UPDATE user SET password = '"+newPassword+"' WHERE email = '"+email+"'";
                     db.execSQL(updatePassword);
+
                     Toast.makeText(this, "Password Changed Successfully", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(ForgotPassword.this,MainActivity.class));
                     finish();
