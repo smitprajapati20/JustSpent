@@ -21,7 +21,6 @@ import android.app.DatePickerDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-
 public class AddTransaction extends AppCompatActivity {
 
     EditText edtTitle,edtAmount;

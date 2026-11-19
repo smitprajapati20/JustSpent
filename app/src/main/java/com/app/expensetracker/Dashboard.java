@@ -30,7 +30,6 @@ public class Dashboard extends AppCompatActivity {
     ArrayList<TransactionModel> transactionList = new ArrayList<>();
     TransactionAdapter adapter;
 
-    String[] transaction_type = {"Income","Expense"};
     String[] category = {
             "Food", "Shopping", "Transport", "Entertainment", "Healthcare", "Education",
             "Travel", "Groceries", "Rent", "Bills", "Personal Care", "Salary",
@@ -44,7 +43,6 @@ public class Dashboard extends AppCompatActivity {
             R.drawable.ic_business, R.drawable.ic_freelance, R.drawable.ic_investment,
             R.drawable.ic_interest, R.drawable.ic_rent, R.drawable.ic_gift, R.drawable.ic_category
     };
-
     String[] payment_name = {
             "Cash", "UPI", "Credit Card", "Debit Card",
             "Net Banking", "Bank Transfer", "Wallet", "Other"
@@ -122,6 +120,7 @@ public class Dashboard extends AppCompatActivity {
 
         transactionRV.setLayoutManager(new LinearLayoutManager(this));
         getTransactions();
+        getTotalIncomeExpense();
 
         adapter = new TransactionAdapter(transactionList);
         transactionRV.setAdapter(adapter);
@@ -173,6 +172,34 @@ public class Dashboard extends AppCompatActivity {
         cursor.close();
     }
 
+    private void getTotalIncomeExpense(){
+
+        int userId = sp.getInt(ConstantSP.userid, 0);
+
+        Cursor incomeCursor = db.rawQuery(
+                "SELECT SUM(amount) FROM transaction_table WHERE userid = ? AND transaction_type = ?",
+                new String[]{String.valueOf(userId), "Income"}
+        );
+
+        if(incomeCursor.moveToFirst()) {
+            double incomeAmount = incomeCursor.getDouble(0);
+            totalIncome.setText("₹ " + incomeAmount);
+        }
+        incomeCursor.close();
+
+        Cursor expenseCursor = db.rawQuery(
+                "SELECT SUM(amount) FROM transaction_table WHERE userid = ? AND transaction_type = ?",
+                new String[]{String.valueOf(userId), "Expense"}
+        );
+
+        if(expenseCursor.moveToFirst()){
+            double expenseAmount = expenseCursor.getDouble(0);
+            totalExpense.setText("₹ " + expenseAmount);
+        }
+
+        expenseCursor.close();
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -182,5 +209,6 @@ public class Dashboard extends AppCompatActivity {
             getTransactions();
             adapter.notifyDataSetChanged();
         }
+        getTotalIncomeExpense();
     }
 }
