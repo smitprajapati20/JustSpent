@@ -106,12 +106,21 @@ public class SignUp extends AppCompatActivity {
                 else{
                     String insertUser = "INSERT INTO user VALUES(NULL, '"+name_text+"', '"+email_text+"', '"+number_text+"', '"+password_text+"')";
                     db.execSQL(insertUser);
-                    sp.edit()
-                            .putString(ConstantSP.name, name_text)
-                            .putString(ConstantSP.contact, number_text)
-                            .putString(ConstantSP.email, email_text)
-                            .putString(ConstantSP.password, password_text)
-                            .apply();
+                    Cursor cursor2 = db.rawQuery("SELECT userid FROM user WHERE email = ?", new String[]{email_text});
+
+                    if(cursor2.moveToFirst()){
+                        int userId = cursor2.getInt(0);
+
+                        sp.edit()
+                                .putInt(ConstantSP.userid, userId)
+                                .putString(ConstantSP.name, name_text)
+                                .putString(ConstantSP.contact, number_text)
+                                .putString(ConstantSP.email, email_text)
+                                .putString(ConstantSP.password, password_text)
+                                .apply();
+                    }
+
+                    cursor2.close();
 
                     Toast.makeText(this, "User Added Successfully!", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(SignUp.this, Dashboard.class));
